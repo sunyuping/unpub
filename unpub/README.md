@@ -1,7 +1,7 @@
 # Unpub
 
-[![build](https://img.shields.io/travis/bytedance/unpub.svg)](https://travis-ci.org/bytedance/unpub)
 [![pub](https://img.shields.io/pub/v/unpub.svg)](https://pub.dev/packages/unpub)
+[![test](https://github.com/bytedance/unpub/workflows/test/badge.svg)](https://github.com/bytedance/unpub/actions?query=workflow:test)
 
 Unpub is a self-hosted private Dart Pub server for Enterprise, with a simple web interface to search and view packages information.
 
@@ -110,8 +110,7 @@ var app = unpub.App(
 
 | URL                                          | Badge                                                                                     |
 | -------------------------------------------- | ----------------------------------------------------------------------------------------- |
-| `/badge/v/{package_name}` (version < 1.0.0)  | ![badge example](https://img.shields.io/static/v1?label=unpub&message=0.1.0&color=orange) |
-| `/badge/v/{package_name}` (version >= 1.0.0) | ![badge example](https://img.shields.io/static/v1?label=unpub&message=1.0.0&color=blue)   |
+| `/badge/v/{package_name}` | ![badge example](https://img.shields.io/static/v1?label=unpub&message=0.1.0&color=orange) ![badge example](https://img.shields.io/static/v1?label=unpub&message=1.0.0&color=blue) |
 | `/badge/d/{package_name}`                    | ![badge example](https://img.shields.io/static/v1?label=downloads&message=123&color=blue) |
 
 ## Alternatives
