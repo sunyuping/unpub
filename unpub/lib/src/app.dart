@@ -65,26 +65,30 @@ class App {
   http.Client _googleapisClient;
 
   Future<String> _getUploaderEmail(shelf.Request req) async {
-    if (overrideUploaderEmail != null) return overrideUploaderEmail;
+    // add by syp for test
+    return "sunyuping@sunyuping.com";
 
-    var authHeader = req.headers[HttpHeaders.authorizationHeader];
-    if (authHeader == null) return null;
+    
+    // if (overrideUploaderEmail != null) return overrideUploaderEmail;
 
-    var token = authHeader.split(' ').last;
+    // var authHeader = req.headers[HttpHeaders.authorizationHeader];
+    // if (authHeader == null) return null;
 
-    if (_googleapisClient == null) {
-      if (googleapisProxy != null) {
-        _googleapisClient = IOClient(HttpClient()
-          ..findProxy = (url) => HttpClient.findProxyFromEnvironment(url,
-              environment: {"https_proxy": googleapisProxy}));
-      } else {
-        _googleapisClient = http.Client();
-      }
-    }
+    // var token = authHeader.split(' ').last;
 
-    var info = await Oauth2Api(_googleapisClient).tokeninfo(accessToken: token);
-    if (info == null) return null;
-    return info.email;
+    // if (_googleapisClient == null) {
+    //   if (googleapisProxy != null) {
+    //     _googleapisClient = IOClient(HttpClient()
+    //       ..findProxy = (url) => HttpClient.findProxyFromEnvironment(url,
+    //           environment: {"https_proxy": googleapisProxy}));
+    //   } else {
+    //     _googleapisClient = http.Client();
+    //   }
+    // }
+
+    // var info = await Oauth2Api(_googleapisClient).tokeninfo(accessToken: token);
+    // if (info == null) return null;
+    // return info.email;
   }
 
   Future<HttpServer> serve([String host = '0.0.0.0', int port = 4000]) async {
